@@ -6,13 +6,23 @@ set(CMAKE_CXX_STANDARD 23)
 # Set the declaration files
 set(
 	DECLARATIONS
-	StackableManagedTask.h
-	StackableManagedTaskAwaiter.h
-	StackableManagedTaskAwaiterBase.h
-	StackablePromiseWithResult.h
-	StackableTaskBase.h
-	StackableUnmanagedTask.h
-	StackableUnmanagedTaskAwaiter.h
+	# Stackable/
+	Stackable/PromiseWithResult.h
+	Stackable/TaskBase.h
+	# Stackable/Managed/
+	Stackable/Managed/Task.h
+	Stackable/Managed/TaskAwaiter.h
+	Stackable/Managed/TaskAwaiterBase.h
+	# Stackable/Managed/Eager/
+	Stackable/Managed/Eager/DefaultPromise.h
+	Stackable/Managed/Eager/TaskAwaiterBase.h
+	# Stackable/Managed/Lazy/
+	Stackable/Managed/Lazy/DefaultPromise.h
+	Stackable/Managed/Lazy/TaskAwaiterBase.h
+	# Stackable/Unmanaged/Eager/
+	Stackable/Unmanaged/Eager/DefaultPromise.h
+	# Stackable/Unmanaged/Lazy/
+	Stackable/Unmanaged/Lazy/DefaultPromise.h
 )
 set(
 	PLATFORM_DEPENDENT_DECLARATIONS
@@ -21,23 +31,51 @@ set(
 # Set the include files
 set(
 	INCLUDES
-	StackableManagedPromise.h
-	StackableManagedPromiseBase.h
-	StackableManagedPromiseBaseConcept.h
-	StackableManagedPromiseFinalAwaiter.h
-	StackableManagedTask.h
-	StackableManagedTaskAwaiter.h
-	StackableManagedTaskAwaiterBase.h
-	StackablePromise.h
-	StackablePromiseConcept.h
-	StackablePromiseWithResult.h
-	StackableTaskBase.h
-	StackableUnmanagedPromise.h
-	StackableUnmanagedPromiseBase.h
-	StackableUnmanagedPromiseBaseConcept.h
-	StackableUnmanagedPromiseFinalAwaiter.h
-	StackableUnmanagedTask.h
-	StackableUnmanagedTaskAwaiter.h
+	# Stackable/
+	Stackable/Promise.h
+	Stackable/PromiseConcept.h
+	Stackable/PromiseWithResult.h
+	Stackable/TaskBase.h
+	# Stackable/Managed/
+	Stackable/Managed/Promise.h
+	Stackable/Managed/PromiseBase.h
+	Stackable/Managed/PromiseBaseConcept.h
+	Stackable/Managed/PromiseFinalAwaiter.h
+	Stackable/Managed/Task.h
+	Stackable/Managed/TaskAwaiter.h
+	Stackable/Managed/TaskAwaiterBase.h
+	# Stackable/Managed/Eager/
+	Stackable/Managed/Eager/DefaultPromise.h
+	Stackable/Managed/Eager/DefaultTask.h
+	Stackable/Managed/Eager/Promise.h
+	Stackable/Managed/Eager/PromiseBase.h
+	Stackable/Managed/Eager/Task.h
+	Stackable/Managed/Eager/TaskAwaiter.h
+	Stackable/Managed/Eager/TaskAwaiterBase.h
+	# Stackable/Managed/Lazy/
+	Stackable/Managed/Lazy/DefaultPromise.h
+	Stackable/Managed/Lazy/DefaultTask.h
+	Stackable/Managed/Lazy/Promise.h
+	Stackable/Managed/Lazy/PromiseBase.h
+	Stackable/Managed/Lazy/Task.h
+	Stackable/Managed/Lazy/TaskAwaiter.h
+	Stackable/Managed/Lazy/TaskAwaiterBase.h
+	# Stackable/Unmanaged/
+	Stackable/Unmanaged/Promise.h
+	Stackable/Unmanaged/PromiseBase.h
+	Stackable/Unmanaged/PromiseBaseConcept.h
+	Stackable/Unmanaged/PromiseFinalAwaiter.h
+	Stackable/Unmanaged/Task.h
+	# Stackable/Unmanaged/Eager/
+	Stackable/Unmanaged/Eager/DefaultPromise.h
+	Stackable/Unmanaged/Eager/DefaultTask.h
+	Stackable/Unmanaged/Eager/Promise.h
+	Stackable/Unmanaged/Eager/PromiseBase.h
+	# Stackable/Unmanaged/Lazy/
+	Stackable/Unmanaged/Lazy/DefaultPromise.h
+	Stackable/Unmanaged/Lazy/DefaultTask.h
+	Stackable/Unmanaged/Lazy/Promise.h
+	Stackable/Unmanaged/Lazy/PromiseBase.h
 )
 set(
 	PLATFORM_DEPENDENT_INCLUDES
@@ -46,11 +84,24 @@ set(
 # Set the source files
 set(
 	SOURCES
-	StackableManagedPromiseBase.cpp
-	StackableManagedPromiseFinalAwaiter.cpp
-	StackablePromise.cpp
-	StackableUnmanagedPromiseBase.cpp
-	StackableUnmanagedPromiseFinalAwaiter.cpp
+	# Stackable/
+	Stackable/Promise.cpp
+	# Stackable/Managed/
+	Stackable/Managed/PromiseBase.cpp
+	Stackable/Managed/PromiseFinalAwaiter.cpp
+	# Stackable/Managed/Eager/
+	Stackable/Managed/Eager/PromiseBase.cpp
+	# Stackable/Managed/Lazy/
+	Stackable/Managed/Lazy/PromiseBase.cpp
+	# Stackable/Unmanaged/
+	Stackable/Unmanaged/PromiseBase.cpp
+	Stackable/Unmanaged/PromiseFinalAwaiter.cpp
+	# Stackable/Unmanaged/Eager/
+	Stackable/Unmanaged/Eager/DefaultPromise.cpp
+	Stackable/Unmanaged/Eager/PromiseBase.cpp
+	# Stackable/Unmanaged/Lazy/
+	Stackable/Unmanaged/Lazy/DefaultPromise.cpp
+	Stackable/Unmanaged/Lazy/PromiseBase.cpp
 )
 set(
 	PLATFORM_DEPENDENT_SOURCES
