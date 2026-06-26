@@ -10,6 +10,7 @@ While the framework is designed with highly extensible templates allowing you to
 
 The framework organises coroutines into a matrix across two main design axes: **Lifetime Management** and **Execution Strategy**.
 
+```
                            ┌─────────────────────┐
                            │ Stackable Framework │
                            └──────────┰──────────┘
@@ -26,6 +27,7 @@ The framework organises coroutines into a matrix across two main design axes: **
         ┌───┸───┐ ┌───┸──┐                        ┌───┸───┐ ┌───┸──┐
         │ Eager │ │ Lazy │                        │ Eager │ │ Lazy │
         └───────┘ └──────┘                        └───────┘ └──────┘
+```
 
 ### 1. Lifetime Management: Managed vs. Unmanaged
 * **Managed**: The lifetime of the coroutine state is strictly tied to the returned `Task` object. Destroying the `Task` instantly cleans up the coroutine via its destructor. Because they are tracked, they **can optionally return a value** back to the caller.
